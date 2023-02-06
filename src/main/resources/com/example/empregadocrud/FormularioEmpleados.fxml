@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="640.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <right>
-      <TableView prefHeight="402.0" prefWidth="399.0" BorderPane.alignment="CENTER">
+      <TableView prefHeight="402.0" prefWidth="399.0" style="-fx-background-color: #AFEEEE;" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="53.0" text="Id" />
             <TableColumn prefWidth="97.0" text="Nombre" />
@@ -16,10 +26,13 @@
             <TableColumn prefWidth="82.0" text="F.nacimiento" />
           <TableColumn prefWidth="67.0" text="Categoria" />
         </columns>
+         <BorderPane.margin>
+            <Insets right="10.0" />
+         </BorderPane.margin>
       </TableView>
    </right>
    <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLEADOS CATCREW" wrappingWidth="595.13671875" BorderPane.alignment="CENTER">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="EMPLEADOS CATCREW 🐈" wrappingWidth="595.13671875" BorderPane.alignment="CENTER">
          <font>
             <Font name="Book Antiqua" size="22.0" />
          </font>
@@ -38,22 +51,22 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos:" GridPane.rowIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha nacimiento:" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Categoria:" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Nombre:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Apellidos:" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Fecha nacimiento:" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Categoria:" GridPane.rowIndex="3" />
             <TextField GridPane.columnIndex="1" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="A1"/>
-                        <String fx:value="A2"/>
-                        <String fx:value="B1"/>
-                        <String fx:value="B2"/>
-                        <String fx:value="C1"/>
-                        <String fx:value="C2"/>
+                        <String fx:value="A1" />
+                        <String fx:value="A2" />
+                        <String fx:value="B1" />
+                        <String fx:value="B2" />
+                        <String fx:value="C1" />
+                        <String fx:value="C2" />
                     </FXCollections>
                 </items>
             </ComboBox>
@@ -64,9 +77,9 @@
       </GridPane>
    </left>
    <bottom>
-      <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER">
+      <Button mnemonicParsing="false" style="-fx-background-color: #4682B4;" text="INSERTAR" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="10.0" />
+            <Insets bottom="10.0" top="10.0" />
          </BorderPane.margin>
       </Button>
    </bottom>
