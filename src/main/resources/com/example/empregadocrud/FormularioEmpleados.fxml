@@ -87,8 +87,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #20B2AA;" text="INSERTAR" GridPane.columnIndex="1" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="212.0" style="-fx-background-color: #87CEFA;" text="EDITAR" textAlignment="CENTER" />
+            <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #20B2AA;" text="EDITAR" GridPane.columnIndex="1" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="212.0" style="-fx-background-color: #87CEFA;" text="INSERTAR" textAlignment="CENTER" />
             <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FFB6C1;" text="ELIMINAR" GridPane.columnIndex="2" />
          </children>
          <opaqueInsets>
