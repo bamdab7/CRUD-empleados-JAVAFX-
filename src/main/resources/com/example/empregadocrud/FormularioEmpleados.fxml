@@ -16,15 +16,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:controller="com.example.empregadocrud.FormularioController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="659.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="659.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empregadocrud.FormularioController">
    <right>
-      <TableView prefHeight="402.0" prefWidth="399.0" style="-fx-background-color: #AFEEEE;" BorderPane.alignment="CENTER">
+      <TableView fx:id="tabladb" prefHeight="402.0" prefWidth="399.0" style="-fx-background-color: #AFEEEE;" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="53.0" text="Id" />
-            <TableColumn prefWidth="97.0" text="Nombre" />
-            <TableColumn prefWidth="98.0" text="Apellidos" />
-            <TableColumn prefWidth="82.0" text="F.nacimiento" />
-          <TableColumn prefWidth="67.0" text="Categoria" />
+            <TableColumn prefWidth="53.0" text="Id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="idEmpleado"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="97.0" text="Nombre">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nombre"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="98.0" text="Apellidos">
+                <cellValueFactory>
+                    <PropertyValueFactory property="apellidos"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="82.0" text="F.nacimiento">
+                <cellValueFactory>
+                    <PropertyValueFactory property="fecha_nacimiento"/>
+                </cellValueFactory>
+            </TableColumn>
+          <TableColumn prefWidth="67.0" text="Categoria">
+              <cellValueFactory>
+                  <PropertyValueFactory property="categoria"/>
+              </cellValueFactory>
+          </TableColumn>
         </columns>
          <BorderPane.margin>
             <Insets right="10.0" />
@@ -55,10 +76,10 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Apellidos:" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Fecha nacimiento:" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Categoria:" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="txtNombre" GridPane.columnIndex="1" />
+            <TextField fx:id="txtApellidos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker fx:id="txtFecha" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="enumCategoria" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="A1" />
@@ -87,9 +108,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #20B2AA;" text="EDITAR" GridPane.columnIndex="1" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="212.0" style="-fx-background-color: #87CEFA;" text="INSERTAR" textAlignment="CENTER" />
-            <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FFB6C1;" text="ELIMINAR" GridPane.columnIndex="2" />
+            <Button fx:id="btnEdit" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnEdit" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #20B2AA;" text="EDITAR" GridPane.columnIndex="1" />
+            <Button fx:id="btnInsert" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnInsert" prefHeight="25.0" prefWidth="212.0" style="-fx-background-color: #87CEFA;" text="INSERTAR" textAlignment="CENTER" />
+            <Button fx:id="btnDelete" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnDelete" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FFB6C1;" text="ELIMINAR" GridPane.columnIndex="2" />
          </children>
          <opaqueInsets>
             <Insets />
