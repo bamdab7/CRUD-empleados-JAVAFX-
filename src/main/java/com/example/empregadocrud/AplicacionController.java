@@ -47,8 +47,29 @@ public class AplicacionController implements Initializable {
     }
 
     public void btnEdit(ActionEvent actionEvent) {
-    }
+        Empleados empleado = new Empleados();
+        empleado.setIdEmpleado(id);
+        empleado.setNombre(txtNombre.getText());
+        empleado.setApellidos(txtApellidos.getText());
 
+        Date date = java.sql.Date.valueOf(txtFecha.getValue());
+        empleado.setFecha_nacimiento(date);
+
+        empleado.setCategoria(enumCategoria.getSelectionModel().getSelectedItem().toString());
+
+        dao.updateEmpleados(empleado);
+        id = 0 ;
+        //PARA QUE LOS VALORES SE ACTUALICEN
+        mostrarEmpleados();
+        eliminarCampos();
+    }
+    public void eliminarCampos(){
+        txtNombre.clear();
+        txtApellidos.clear();
+        txtFecha.setValue(null);
+        enumCategoria.setValue(null);
+        id = 0;
+    }
     public void btnInsert(ActionEvent actionEvent){
         Empleados empleado = new Empleados();
         empleado.setIdEmpleado(id);
@@ -64,6 +85,7 @@ public class AplicacionController implements Initializable {
         id = 0 ;
         //PARA QUE LOS VALORES SE ACTUALICEN
         mostrarEmpleados();
+        eliminarCampos();
     }
 
     public void btnDelete(ActionEvent actionEvent) {
