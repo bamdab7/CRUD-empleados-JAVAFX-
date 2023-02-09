@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
+import javax.swing.*;
 
 public class AplicacionController implements Initializable {
 
@@ -48,20 +49,26 @@ public class AplicacionController implements Initializable {
 
     public void btnEdit(ActionEvent actionEvent) {
         Empleados empleado = new Empleados();
-        empleado.setIdEmpleado(id);
-        empleado.setNombre(txtNombre.getText());
-        empleado.setApellidos(txtApellidos.getText());
+        if(txtNombre.getText().isEmpty() || txtApellidos.getText().isEmpty() || txtFecha.getValue() == null ||enumCategoria.getSelectionModel().getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(new JFrame(), "Todos los campos deben estar cubiertos", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }else {
+            empleado.setIdEmpleado(id);
+            empleado.setNombre(txtNombre.getText());
+            empleado.setApellidos(txtApellidos.getText());
 
-        Date date = java.sql.Date.valueOf(txtFecha.getValue());
-        empleado.setFecha_nacimiento(date);
+            Date date = java.sql.Date.valueOf(txtFecha.getValue());
+            empleado.setFecha_nacimiento(date);
 
-        empleado.setCategoria(enumCategoria.getSelectionModel().getSelectedItem().toString());
+            empleado.setCategoria(enumCategoria.getSelectionModel().getSelectedItem().toString());
 
-        dao.updateEmpleados(empleado);
-        id = 0 ;
-        //PARA QUE LOS VALORES SE ACTUALICEN
-        mostrarEmpleados();
-        eliminarCampos();
+            dao.updateEmpleados(empleado);
+            id = 0 ;
+            //PARA QUE LOS VALORES SE ACTUALICEN
+            mostrarEmpleados();
+            eliminarCampos();
+        }
+
     }
     public void eliminarCampos(){
         txtNombre.clear();
@@ -72,26 +79,38 @@ public class AplicacionController implements Initializable {
     }
     public void btnInsert(ActionEvent actionEvent){
         Empleados empleado = new Empleados();
-        empleado.setIdEmpleado(id);
-        empleado.setNombre(txtNombre.getText());
-        empleado.setApellidos(txtApellidos.getText());
+        //COMPROBAR
+        if(txtNombre.getText().isEmpty() || txtApellidos.getText().isEmpty() || txtFecha.getValue() == null ||enumCategoria.getSelectionModel().getSelectedItem() == null){
+            JOptionPane.showMessageDialog(new JFrame(), "Todos los campos deben estar cubiertos", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }else {
+            empleado.setIdEmpleado(id);
+            empleado.setNombre(txtNombre.getText());
+            empleado.setApellidos(txtApellidos.getText());
 
-        Date date = java.sql.Date.valueOf(txtFecha.getValue());
-        empleado.setFecha_nacimiento(date);
+            Date date = java.sql.Date.valueOf(txtFecha.getValue());
+            empleado.setFecha_nacimiento(date);
 
-        empleado.setCategoria(enumCategoria.getSelectionModel().getSelectedItem().toString());
+            empleado.setCategoria(enumCategoria.getSelectionModel().getSelectedItem().toString());
 
-        dao.insertarEmpleados(empleado);
-        id = 0 ;
-        //PARA QUE LOS VALORES SE ACTUALICEN
-        mostrarEmpleados();
-        eliminarCampos();
+            dao.insertarEmpleados(empleado);
+            id = 0;
+            //PARA QUE LOS VALORES SE ACTUALICEN
+            mostrarEmpleados();
+            eliminarCampos();
+        }
     }
 
     public void btnDelete(ActionEvent actionEvent) {
         Empleados empleados = tabladb.getSelectionModel().getSelectedItem();
-        dao.deleteEmpleados(empleados);
-        mostrarEmpleados();
+        if(empleados == null) {
+            JOptionPane.showMessageDialog(new JFrame(), "Debes seleccionar un empleado!", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }else {
+            dao.deleteEmpleados(empleados);
+            mostrarEmpleados();
+        }
+
     }
 
     public void mostrarEmpleados(){
