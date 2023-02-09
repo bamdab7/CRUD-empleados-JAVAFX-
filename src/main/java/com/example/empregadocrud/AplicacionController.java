@@ -6,6 +6,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -27,12 +29,27 @@ public class AplicacionController implements Initializable {
         dao = new EmpleadosDAO();
         dao.getConnection();
         mostrarEmpleados();
+
+        tabladb.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2){
+                Empleados empleados = tabladb.getSelectionModel().getSelectedItem();
+                //SETEAMOS VALORES
+                txtNombre.setText(empleados.getNombre());
+                txtApellidos.setText(empleados.getApellidos());
+                    Date input = empleados.getFecha_nacimiento();
+                    LocalDate date = new java.sql.Date((empleados.getFecha_nacimiento()).getTime()).toLocalDate();
+                txtFecha.setValue(date);
+                enumCategoria.setValue(empleados.getCategoria());
+                id = empleados.getIdEmpleado();
+                System.out.print(empleados);
+            }
+        });
     }
 
     public void btnEdit(ActionEvent actionEvent) {
     }
 
-    public void btnInsert(ActionEvent actionEvent) {
+    public void btnInsert(ActionEvent actionEvent){
         Empleados empleado = new Empleados();
         empleado.setIdEmpleado(id);
         empleado.setNombre(txtNombre.getText());

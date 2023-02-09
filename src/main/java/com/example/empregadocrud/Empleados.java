@@ -59,4 +59,15 @@ public class Empleados {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+
+    @Override
+    public String toString() {
+        return "Empleados{" +
+                "idEmpleado=" + idEmpleado +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", fecha_nacimiento=" + fecha_nacimiento +
+                ", categoria='" + categoria + '\'' +
+                '}';
+    }
 }

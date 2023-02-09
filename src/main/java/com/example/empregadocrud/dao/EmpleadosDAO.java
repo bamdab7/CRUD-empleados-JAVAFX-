@@ -52,4 +52,19 @@ public class EmpleadosDAO {
             e.printStackTrace();
         }
     }
+
+    public void updateEmpleados(Empleados empleados){
+        Connection conn = getConnection();
+        String query = "UPDATE empleados " +
+                "SET nombre = '" + empleados.getNombre() + "',apellidos = '"
+                + empleados.getApellidos() + "',fecha_nacimiento = '" + empleados.getFecha_nacimiento()
+                + "',categoria = '" + empleados.getCategoria() + "WHERE idEmpleado = " + empleados.getIdEmpleado();
+        Statement st;
+        try{
+            st = conn.createStatement();
+            st.executeUpdate(query);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
