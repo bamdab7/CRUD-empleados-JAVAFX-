@@ -67,7 +67,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.empregadocrud/com.example.empregadocrud.Formulario</mainClass>
+                            <mainClass>com.example.empregadocrud/com.example.empregadocrud.Aplicacion</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

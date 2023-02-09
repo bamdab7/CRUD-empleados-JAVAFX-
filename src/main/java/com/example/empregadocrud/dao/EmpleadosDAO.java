@@ -12,7 +12,6 @@ public class EmpleadosDAO {
         Connection conn;
         try{
             conn = DriverManager.getConnection("jdbc:mysql://localhost/empleadosdb", "root", "");
-            System.out.printf("Hola");
             return conn;
         }catch (SQLException e){
             System.out.println("Error" + e.getMessage());
@@ -33,13 +32,11 @@ public class EmpleadosDAO {
             while (rs.next()){
                 empleados = new Empleados(rs.getInt("idEmpleado"),rs.getString("nombre"),
                         rs.getString("apellidos"), rs.getDate("fecha_nacimiento"), rs.getString("categoria"));
+                empleadosList.add(empleados);
             }
         }catch (Exception e){
             e.printStackTrace();
         }
-
-    }
-    public void mostrarEmpleados(){
-
+        return empleadosList;
     }
 }

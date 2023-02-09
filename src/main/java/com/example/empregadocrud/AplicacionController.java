@@ -2,14 +2,13 @@ package com.example.empregadocrud;
 
 import com.example.empregadocrud.dao.EmpleadosDAO;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FormularioController implements Initializable {
+public class AplicacionController implements Initializable {
 
     public TextField txtNombre;
     public TextField txtApellidos;
@@ -19,11 +18,13 @@ public class FormularioController implements Initializable {
     public Button btnInsert;
     public Button btnDelete;
     public TableView<Empleados> tabladb;
+    EmpleadosDAO dao;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        EmpleadosDAO dao = new EmpleadosDAO();
+        dao = new EmpleadosDAO();
         dao.getConnection();
+        mostrarEmpleados();
     }
 
     public void btnEdit(ActionEvent actionEvent) {
@@ -33,5 +34,9 @@ public class FormularioController implements Initializable {
     }
 
     public void btnDelete(ActionEvent actionEvent) {
+    }
+
+    public void mostrarEmpleados(){
+        tabladb.setItems(dao.obtenerListaEmpleados());
     }
 }

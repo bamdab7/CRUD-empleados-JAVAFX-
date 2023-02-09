@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="659.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empregadocrud.FormularioController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="659.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empregadocrud.AplicacionController">
    <right>
       <TableView fx:id="tabladb" prefHeight="402.0" prefWidth="399.0" style="-fx-background-color: #AFEEEE;" BorderPane.alignment="CENTER">
         <columns>
