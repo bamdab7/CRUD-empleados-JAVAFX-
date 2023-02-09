@@ -69,4 +69,15 @@ public class EmpleadosDAO {
             e.printStackTrace();
         }
     }
+    public void deleteEmpleados(Empleados empleados){
+        String query = "DELETE from empleados WHERE idEmpleado = "+ empleados.getIdEmpleado();
+        Connection conn = getConnection();
+        Statement st;
+        try{
+            st = conn.createStatement();
+            st.executeUpdate(query);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

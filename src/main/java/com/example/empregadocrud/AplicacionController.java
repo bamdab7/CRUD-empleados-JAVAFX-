@@ -89,6 +89,9 @@ public class AplicacionController implements Initializable {
     }
 
     public void btnDelete(ActionEvent actionEvent) {
+        Empleados empleados = tabladb.getSelectionModel().getSelectedItem();
+        dao.deleteEmpleados(empleados);
+        mostrarEmpleados();
     }
 
     public void mostrarEmpleados(){
