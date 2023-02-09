@@ -39,4 +39,17 @@ public class EmpleadosDAO {
         }
         return empleadosList;
     }
+
+    public void insertarEmpleados(Empleados empleado){
+        Connection conn = getConnection();
+        String query = "INSERT INTO empleados (idEmpleado, nombre, apellidos, fecha_nacimiento, categoria) VALUES ('" +
+                empleado.getIdEmpleado()+"','"+ empleado.getNombre()+"','" + empleado.getApellidos()+"','"+empleado.getFecha_nacimiento()+"','"+ empleado.getCategoria() + "')";
+        Statement st;
+        try {
+            st = conn.createStatement();
+            st.executeUpdate(query);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

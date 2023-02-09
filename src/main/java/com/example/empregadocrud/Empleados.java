@@ -9,6 +9,9 @@ public class Empleados {
     private Date fecha_nacimiento;
     private String categoria;
 
+    public Empleados() {
+    }
+
     public Empleados(Integer idEmpleado, String nombre, String apellidos, Date fecha_nacimiento, String categoria) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
