@@ -23,7 +23,7 @@ public class FormularioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         EmpleadosDAO dao = new EmpleadosDAO();
-        dao.crearTabla();
+        dao.getConnection();
     }
 
     public void btnEdit(ActionEvent actionEvent) {

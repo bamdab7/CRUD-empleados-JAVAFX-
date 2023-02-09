@@ -7,9 +7,9 @@ public class Empleados {
     private String nombre;
     private String apellidos;
     private Date fecha_nacimiento;
-    private Enum categoria;
+    private String categoria;
 
-    public Empleados(Integer idEmpleado, String nombre, String apellidos, Date fecha_nacimiento, Enum categoria) {
+    public Empleados(Integer idEmpleado, String nombre, String apellidos, Date fecha_nacimiento, String categoria) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -49,11 +49,11 @@ public class Empleados {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public Enum getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Enum categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 }
