@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -16,34 +17,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="659.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empregadocrud.AplicacionController">
    <right>
       <TableView fx:id="tabladb" prefHeight="402.0" prefWidth="399.0" style="-fx-background-color: #AFEEEE;" BorderPane.alignment="CENTER">
         <columns>
             <TableColumn prefWidth="53.0" text="Id">
                 <cellValueFactory>
-                    <PropertyValueFactory property="idEmpleado"/>
+                    <PropertyValueFactory property="idEmpleado" />
                 </cellValueFactory>
             </TableColumn>
             <TableColumn prefWidth="97.0" text="Nombre">
                 <cellValueFactory>
-                    <PropertyValueFactory property="nombre"/>
+                    <PropertyValueFactory property="nombre" />
                 </cellValueFactory>
             </TableColumn>
             <TableColumn prefWidth="98.0" text="Apellidos">
                 <cellValueFactory>
-                    <PropertyValueFactory property="apellidos"/>
+                    <PropertyValueFactory property="apellidos" />
                 </cellValueFactory>
             </TableColumn>
             <TableColumn prefWidth="82.0" text="F.nacimiento">
                 <cellValueFactory>
-                    <PropertyValueFactory property="fecha_nacimiento"/>
+                    <PropertyValueFactory property="fecha_nacimiento" />
                 </cellValueFactory>
             </TableColumn>
           <TableColumn prefWidth="67.0" text="Categoria">
               <cellValueFactory>
-                  <PropertyValueFactory property="categoria"/>
+                  <PropertyValueFactory property="categoria" />
               </cellValueFactory>
           </TableColumn>
         </columns>
@@ -53,7 +53,7 @@
       </TableView>
    </right>
    <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="EMPLEADOS CATCREW 🐈" wrappingWidth="595.13671875" BorderPane.alignment="CENTER">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="EMPLEADOS CATCREW 🐈" textAlignment="CENTER" wrappingWidth="665.13671875" BorderPane.alignment="CENTER">
          <font>
             <Font name="Book Antiqua" size="22.0" />
          </font>
@@ -72,10 +72,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Nombre:" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Apellidos:" GridPane.rowIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Fecha nacimiento:" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Categoria:" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Nombre:" textAlignment="CENTER" wrappingWidth="93.447265625" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Apellidos:" textAlignment="CENTER" wrappingWidth="97.580078125" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Fecha nacimiento:" textAlignment="CENTER" wrappingWidth="91.21484375" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Comic Sans MS;" text="Categoria:" textAlignment="CENTER" wrappingWidth="96.759765625" GridPane.rowIndex="3" />
             <TextField fx:id="txtNombre" GridPane.columnIndex="1" />
             <TextField fx:id="txtApellidos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <DatePicker fx:id="txtFecha" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -109,7 +109,7 @@
         </rowConstraints>
          <children>
             <Button fx:id="btnEdit" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnEdit" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #20B2AA;" text="EDITAR" GridPane.columnIndex="1" />
-            <Button fx:id="btnInsert" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnInsert" prefHeight="25.0" prefWidth="212.0" style="-fx-background-color: #87CEFA;" text="INSERTAR" textAlignment="CENTER" />
+            <Button fx:id="btnInsert" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnInsert" prefHeight="25.0" prefWidth="212.0" style="-fx-background-color: #90EE90;" text="INSERTAR" textAlignment="CENTER" />
             <Button fx:id="btnDelete" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnDelete" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FFB6C1;" text="ELIMINAR" GridPane.columnIndex="2" />
          </children>
          <opaqueInsets>
