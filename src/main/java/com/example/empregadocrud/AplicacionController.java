@@ -110,6 +110,7 @@ public class AplicacionController implements Initializable {
             dao.deleteEmpleados(empleados);
             mostrarEmpleados();
         }
+        eliminarCampos();
 
     }
 
